@@ -1,4 +1,5 @@
 check fsoares tests
+move ft split things into libft
 fix makefile
 make everything nice and nominetty
 fix includes

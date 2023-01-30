@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:29:34 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/01/30 16:15:41 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:45:48 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,24 @@ static int	ft_calc_strl(char **nxt_str, char c) //write this better
 static int	ft_calc_nbr_of_strings(char const *s, char c)
 {
 	int		i;
-	int		stringCount;
+	int		string_count;
 
-	stringCount = 0;
+	string_count = 0;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == '\'' || s[i] == '\"')	
+		if (s[i] == '\'' || s[i] == '\"')
 		{
-			stringCount++;
-			break ;	
+			string_count++;
+			break ;
 		}
-		if (s[i] != c) 
-			stringCount++;
+		if (s[i] != c)
+			string_count++;
 		while (s[i] != c && s[i + 1])
 			i++;
 		i++;
 	}
-	return (stringCount);
+	return (string_count);
 }
 
 char	**ft_split_pipex(char const *s, char c)
