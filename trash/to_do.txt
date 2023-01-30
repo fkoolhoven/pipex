@@ -1,0 +1,9 @@
+check fsoares tests
+fix makefile
+make everything nice and nominetty
+fix includes
+check for leaks
+
+what if there's no input file? should still run command and exit with 0
+
+read through code and check everything
