@@ -6,14 +6,14 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:45:37 by felicia           #+#    #+#             */
-/*   Updated: 2023/01/31 17:00:43 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:43:28 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "libft.h"
+# include "libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
@@ -22,7 +22,7 @@
 # include <errno.h>
 # include <stdlib.h>
 
-// -----structs--------------
+// =====STRUCTS=================================================================
 
 typedef struct s_var
 {
@@ -30,17 +30,17 @@ typedef struct s_var
 	char	**envp;
 	int		last_command;
 	int		inputfile_error;
+	int		fd_heredoc;
 	char	**path_options;
 	int		fd_pipe[2];
 	pid_t	child;
 }	t_var;
 
-// -----functions------------
+// =====FUNCTIONS===============================================================
 
-char	**ft_split_q(char const *s, char c);
-char	*ft_straddchar(char *s1, char c);
+int		here_doc(char **argv);
+void	pipex(t_var var, char **argv);
 void	command_not_found(char *invalid_command, char zsh_or_pipex);
 void	handle_errors(int exitcode);
-void	pipex(t_var var, char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/01/31 17:06:41 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:59:09 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void	parent_process(t_var var, int command)
 		close(var.fd_pipe[0]);
 		close(var.fd_pipe[1]);
 	}
-	if (command == var.last_command)
+	else if (command == var.last_command)
 	{
 		waitpid(var.child, &waitstatus, 0);
 		statuscode = WEXITSTATUS(waitstatus);
-		system("leaks pipex");
 		exit (statuscode);
 	}
 }
@@ -74,7 +73,10 @@ void	pipex(t_var var, char **argv)
 {
 	int		command;
 
-	command = 2;
+	if (var.fd_heredoc >= 0)
+		command = 3;
+	else
+		command = 2;
 	while (command < var.argc - 1)
 	{
 		if (command != var.last_command && pipe(var.fd_pipe) < 0)
@@ -87,6 +89,7 @@ void	pipex(t_var var, char **argv)
 		else
 			parent_process(var, command);
 		var.inputfile_error = 0;
+		unlink("heredoc");
 		command++;
 	}
 }
