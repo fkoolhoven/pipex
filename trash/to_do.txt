@@ -1,6 +1,0 @@
-check fsoares tests
-fix makefile
-make everything nice and nominetty
-fix includes
-read through code and check everything
-do bonus?
