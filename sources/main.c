@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:42:48 by felicia           #+#    #+#             */
-/*   Updated: 2023/01/30 16:15:33 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:00:47 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**find_path(t_var var)
 	i = 0;
 	while (path_options[i] != NULL)
 	{
-		path_options[i] = ft_strjoin_pipex(path_options[i], "/");
+		path_options[i] = ft_straddchar(path_options[i], '/');
 		i++;
 	}
 	return (path_options);

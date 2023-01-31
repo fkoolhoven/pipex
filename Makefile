@@ -4,7 +4,7 @@ LIBFT_DIR	= includes/libft
 LIBFT		= includes/libft/libft.a
 SRC_DIR 	= sources
 OBJ_DIR 	= objects
-SRC_FILES 	= main.c pipex.c errors.c ft_split_pipex.c
+SRC_FILES 	= main.c pipex.c errors.c
 OBJ_FILES	= $(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
 CC 			= cc
 CFLAGS 		= -Wall -Wextra -Werror

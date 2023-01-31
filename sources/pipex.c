@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/01/30 13:33:50 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:06:41 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	parent_process(t_var var, int command)
 	{
 		waitpid(var.child, &waitstatus, 0);
 		statuscode = WEXITSTATUS(waitstatus);
+		system("leaks pipex");
 		exit (statuscode);
 	}
 }
@@ -38,7 +39,9 @@ void	execute_command(t_var var, char **argv, int command)
 	int		i;
 	char	*try_path;
 
-	command_options = ft_split_pipex(argv[command], ' ');
+	command_options = ft_split_q(argv[command], ' ');
+	if (access(command_options[0], X_OK) == 0)
+		execve(command_options[0], command_options, var.envp);
 	i = 0;
 	if (var.path_options == NULL)
 		command_not_found(command_options[0], 'z');
