@@ -24,7 +24,7 @@ $(LIBFT):
 
 clean:
 	$(RM)r $(OBJ_DIR)
-	make clean -C $(LIBFT_DIR)
+	@make clean -C $(LIBFT_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

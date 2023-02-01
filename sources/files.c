@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:32:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/01 15:15:02 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:34:14 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,11 @@ int	manage_heredoc(char **argv)
 	if (fd_heredoc < 0)
 		handle_errors(EXIT_FAILURE);
 	limiter = ft_strjoin(argv[2], "\n");
+	ft_putstr_fd("pipe heredoc> ", 0);
 	next_line = get_next_line(0);
 	while (ft_strncmp(next_line, limiter, ft_strlen(limiter)) != 0)
 	{
+		ft_putstr_fd("pipe heredoc> ", 0);
 		ft_putstr_fd(next_line, fd_heredoc);
 		free(next_line);
 		next_line = get_next_line(0);
