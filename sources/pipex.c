@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/01 12:12:04 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:31:05 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	execute_command(t_var var, char **argv, int command)
 	char	*try_path;
 
 	command_options = ft_split_q(argv[command], ' ');
+	if (var.path_options == NULL)
+		command_not_found(command_options[0], 'z');
 	if (access(command_options[0], X_OK) == 0)
 		execve(command_options[0], command_options, var.envp);
 	i = 0;
-	if (var.path_options == NULL)
-		command_not_found(command_options[0], 'z');
 	while (var.path_options[i] != NULL)
 	{
 		try_path = ft_strjoin(var.path_options[i], command_options[0]);

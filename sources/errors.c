@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:07:20 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/01/30 13:33:53 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:26:04 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	handle_errors(int exitcode)
 {
+	unlink("heredoc");
 	if (errno)
 		perror("Error message");
 	exit(exitcode);
@@ -21,6 +22,7 @@ void	handle_errors(int exitcode)
 
 void	command_not_found(char *invalid_command, char zsh_or_pipex)
 {
+	unlink("heredoc");
 	if (zsh_or_pipex == 'z')
 	{
 		ft_putstr_fd("zsh: command not found: ", STDERR_FILENO);

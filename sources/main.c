@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:42:48 by felicia           #+#    #+#             */
-/*   Updated: 2023/02/01 15:10:06 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:21:16 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv, char **envp)
 
 	if (argc < 5)
 	{
-		ft_putendl_fd("Error message: Too few arguments", 1);
+		ft_putendl_fd("Error message: Too few arguments", STDERR_FILENO);
 		exit(EXIT_FAILURE);
 	}
 	var.argc = argc;
@@ -54,7 +54,7 @@ int	main(int argc, char **argv, char **envp)
 	var.fd_heredoc = -1;
 	var.path_options = find_path(var);
 	if (ft_strncmp(argv[1], "here_doc", 9) == 0)
-		var.fd_heredoc = manage_heredoc(argv);
+		var.fd_heredoc = manage_heredoc(var, argv);
 	var.inputfile_error = manage_inputfile(var, argv);
 	manage_outputfile(var, argv);
 	pipex(var, argv);
