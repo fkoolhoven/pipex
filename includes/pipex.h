@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:45:37 by felicia           #+#    #+#             */
-/*   Updated: 2023/01/31 21:43:28 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:15:14 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ typedef struct s_var
 
 // =====FUNCTIONS===============================================================
 
-int		here_doc(char **argv);
+int		manage_heredoc(char **argv);
+int		manage_inputfile(t_var var, char **argv);
+void	manage_outputfile(t_var var, char **argv);
 void	pipex(t_var var, char **argv);
 void	command_not_found(char *invalid_command, char zsh_or_pipex);
 void	handle_errors(int exitcode);

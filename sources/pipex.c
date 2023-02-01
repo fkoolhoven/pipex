@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/01/31 21:59:09 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:12:04 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ void	pipex(t_var var, char **argv)
 		else
 			parent_process(var, command);
 		var.inputfile_error = 0;
-		unlink("heredoc");
+		if (var.fd_heredoc >= 0)
+			unlink("heredoc");
 		command++;
 	}
 }

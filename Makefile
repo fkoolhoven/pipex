@@ -1,11 +1,11 @@
 NAME 		= pipex
 INCLUDES 	= includes
+LIBFT		= $(addprefix $(LIBFT_DIR)/,libft.a)
 LIBFT_DIR	= includes/libft
-LIBFT		= includes/libft/libft.a
+SRC_FILES 	= main.c pipex.c errors.c files.c
 SRC_DIR 	= sources
-OBJ_DIR 	= objects
-SRC_FILES 	= main.c pipex.c errors.c
 OBJ_FILES	= $(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
+OBJ_DIR 	= objects
 CC 			= cc
 CFLAGS 		= -Wall -Wextra -Werror
 RM			= rm -f
