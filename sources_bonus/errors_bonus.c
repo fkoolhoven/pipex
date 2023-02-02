@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:07:20 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:10 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:50:45 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes_bonus/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 void	handle_errors(int exitcode)
 {

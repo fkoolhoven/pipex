@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:27 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:50:41 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes_bonus/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 void	parent_process(t_var var, int command)
 {

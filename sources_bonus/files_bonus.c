@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   files.c                                            :+:      :+:    :+:   */
+/*   files_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:32:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:19 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:50:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes_bonus/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 void	manage_outputfile(t_var var, char **argv)
 {
