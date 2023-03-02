@@ -6,11 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:42:48 by felicia           #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:23 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:58:22 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes_bonus/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 char	**find_path(t_var var)
 {

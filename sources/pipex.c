@@ -6,11 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:08:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:27 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:58:23 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes_bonus/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 void	parent_process(t_var var, int command)
 {
@@ -35,8 +35,8 @@ void	parent_process(t_var var, int command)
 void	execute_command(t_var var, char **argv, int command)
 {
 	char	**command_options;
-	int		i;
 	char	*try_path;
+	int		i;
 
 	command_options = ft_split_q(argv[command], ' ');
 	if (var.path_options == NULL)
@@ -58,7 +58,7 @@ void	execute_command(t_var var, char **argv, int command)
 void	child_process(t_var var, int command, char **argv)
 {
 	if (var.inputfile_error == 1)
-		exit (1);
+		exit (EXIT_FAILURE);
 	if (command != var.last_command)
 	{
 		if (dup2(var.fd_pipe[1], STDOUT_FILENO) < 0)

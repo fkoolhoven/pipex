@@ -6,11 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:32:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 11:50:44 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:58:26 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../includes_bonus/pipex_bonus.h"
 
 void	manage_outputfile(t_var var, char **argv)
 {
@@ -22,8 +22,9 @@ void	manage_outputfile(t_var var, char **argv)
 		fd_out = open(argv[var.argc - 1], O_CREAT | O_RDWR | O_TRUNC, 0644);
 	if (fd_out < 0)
 	{
-		perror("zsh: output");
-		exit (1);
+		ft_putstr_fd("zsh: ", STDERR_FILENO);
+		perror(argv[var.argc - 1]);
+		exit (EXIT_FAILURE);
 	}
 	if (dup2(fd_out, STDOUT_FILENO) < 0)
 		handle_errors(EXIT_FAILURE);
@@ -40,7 +41,8 @@ int	manage_inputfile(t_var var, char **argv)
 	fd_in = open(argv[1], O_RDONLY);
 	if (fd_in < 0)
 	{
-		perror("pipex: input");
+		ft_putstr_fd("pipex: ", STDERR_FILENO);
+		perror(argv[1]);
 		inputfile_error = 1;
 	}
 	if (fd_in >= 0)
