@@ -6,20 +6,9 @@
 </div>
   
 
-## :star2: About the Project
+# About the Project
 
-A project made in accordance with the Pipex project for the Codam Core Curriculum.
-Teaches how to use piping, create forks and change the STDIN and STDOUT through dup2.
-
-
-
-
-# Features
-
-Handles multiple commands from the commandline, processes them through pipes and outputs it into a designated output file.
-
-
-
+A project made in accordance with the pipex project which is part of the Codam Core Curriculum. It recreates the functionality of the pipe (|) symbol, which allows you to send the output of one command to another command as input for further processing. I passed this project with 125%. It handles multiple commands from the commandline, processes them through pipes and puts the output into a designated output file. As a bonus I recreated the heredoc functionality.
 
 # Getting Started
 
@@ -45,15 +34,13 @@ For example:
 You can add more commands if you'd like.
 My pipex also supports heredoc. Use as follows:
 ```c
-./pipex here_doc [LIMITER] command1 commdand1 [outfile.txt]
+./pipex here_doc [LIMITER] command1 command2 [outfile.txt]
 ```
 For example:
 ```c
 ./pipex here_doc EOF "grep a" "wc -l" "column -t" outfile
 ```
 
-
 # Contact
 
 See my profile page for ways to contact me!
-
