@@ -36,7 +36,6 @@ should recreate the behaviour of:
 ```c
 < inputfile grep a | wc -l | column -t > outputfile
 ```
-< file1 cmd1 | cmd2 > file2
 
 You can add more commands if you'd like.
 My pipex also supports heredoc. Use as follows:
