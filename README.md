@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="PIPEX.png" alt="logo" width="500" height="auto" />
+  <img src="PIPEX (1).png" alt="logo" width="500" height="auto" />
   
   <p>
     Handling multiple system commands through C.
