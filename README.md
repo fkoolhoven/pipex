@@ -25,11 +25,11 @@ make
 # Usage
 
 ```c
-./pipex [infile.txt] command1 command2 [outfile.txt]
+./pipex [infile] command1 command2 [outfile]
 ```
 For example:
 ```c
-./pipex infile "grep a" "wc -l" "column -t" outfile
+./pipex inputfile "grep a" "wc -l" "column -t" outputfile
 ```
 You can add more commands if you'd like.
 My pipex also supports heredoc. Use as follows:
@@ -38,7 +38,7 @@ My pipex also supports heredoc. Use as follows:
 ```
 For example:
 ```c
-./pipex here_doc EOF "grep a" "wc -l" "column -t" outfile
+./pipex here_doc EOF "grep a" "wc -l" "column -t" outputfile
 ```
 
 # Contact
