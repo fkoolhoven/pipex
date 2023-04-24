@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="PIPEX.png" alt="logo" width="200" height="auto" />
+  <img src="PIPEX.png" alt="logo" width="500" height="auto" />
   <h1>PIPEX</h1>
   
   <p>
