@@ -50,6 +50,8 @@ should recreate the behaviour of:
 ```c
 grep a << EOF | wc -l | column -t >> outputfile
 ```
+# Important Learnings
+I learned how to create pipes using pipe(), create forks using fork() and redirect input and output through the use of dup2(). Furthermore I gained an understanding of parent and child processes, exit statuses and basic error handling.
 
 # Contact
 
