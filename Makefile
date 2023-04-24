@@ -6,14 +6,8 @@ OBJ_DIR 	= objects
 CC 			= cc
 CFLAGS 		= -Wall -Wextra -Werror
 RM			= rm -f
-
-ifdef BONUS
-SRC_FILES	= main_bonus.c pipex_bonus.c errors_bonus.c files_bonus.c
-SRC_DIR 	= sources_bonus
-else
 SRC_FILES 	= main.c pipex.c errors.c files.c
 SRC_DIR 	= sources
-endif
 
 all: $(NAME)
 
