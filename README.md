@@ -1,9 +1,7 @@
 <div align="center"> 
  <h1>PIPEX</h1>
   
-  <p>
-    Handling multiple system commands through C.
-  </p>
+
 </div>
   
 
