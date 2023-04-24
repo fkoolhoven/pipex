@@ -2,9 +2,6 @@
 
   <img src="img/PIPEX.png" alt="logo" width="1000" height="auto" />
   
-  <p>
-    Handling multiple system commands through C.
-  </p>
 </div>
   
 
