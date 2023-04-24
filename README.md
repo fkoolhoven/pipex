@@ -1,7 +1,11 @@
-<div align="center"> 
- <h1>PIPEX</h1>
-  
+<div align="center">
 
+  <img src="PIPEX.png" alt="logo" width="200" height="auto" />
+  <h1>PIPEX</h1>
+  
+  <p>
+    Handling multiple system commands through C.
+  </p>
 </div>
   
 
