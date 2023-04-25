@@ -5,11 +5,11 @@
 </div>
   
 
-# About the Project
+# About the project
 
 A project made in accordance with the pipex project which is part of the Codam Core Curriculum. It recreates the functionality of the pipe (|) symbol, which allows you to send the output of one command to another command as input for further processing. I passed this project with 125%. It handles multiple commands from the commandline, processes them through pipes and puts the output into a designated output file. As a bonus I recreated the heredoc functionality.
 
-# Getting Started
+# Getting started
 
 Start by cloning the repository:
 ```c
@@ -48,7 +48,7 @@ should recreate the behaviour of:
 ```c
 grep a << EOF | wc -l | column -t >> outputfile
 ```
-# Important Learnings
+# Important learnings
 I learned how to create pipes using pipe(), create forks using fork() and redirect input and output through the use of dup2(). Furthermore I gained an understanding of parent and child processes, exit statuses and basic error handling. During this project I also focused on improving the readability of my code.
 
 # Contact
