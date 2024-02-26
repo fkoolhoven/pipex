@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:03:26 by fkoolhov          #+#    #+#             */
-/*   Updated: 2022/11/03 14:08:25 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:26:04 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*ptr;
 
-	while (*lst != '\0')
+	while (*lst != NULL)
 	{
 		ptr = (*lst)->next;
 		del((*lst)->content);

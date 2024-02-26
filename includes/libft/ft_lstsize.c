@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:50:54 by fkoolhov          #+#    #+#             */
-/*   Updated: 2022/10/31 21:51:47 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:25:50 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_lstsize(t_list *lst)
 	if (lst == NULL)
 		return (0);
 	count = 1;
-	while (search->next != '\0')
+	while (search->next != NULL)
 	{
 		search = search->next;
 		count++;

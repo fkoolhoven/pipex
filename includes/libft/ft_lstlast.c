@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:34:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2022/11/03 13:26:34 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:25:57 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	search = lst;
-	while (search->next != '\0')
+	while (search->next != NULL)
 		search = search->next;
 	return (search);
 }
