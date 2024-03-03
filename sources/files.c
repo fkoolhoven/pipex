@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   files.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:32:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/02/02 12:58:20 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/03 22:57:37 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 void	manage_outputfile(t_var var, char **argv)
 {

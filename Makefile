@@ -1,6 +1,7 @@
 NAME 		= pipex
-LIBFT		= $(addprefix $(LIBFT_DIR)/,libft.a)
-LIBFT_DIR	= includes/libft
+INC			= includes
+LIBFT_DIR	= libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 OBJ_FILES	= $(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
 OBJ_DIR 	= objects
 CC 			= cc
@@ -16,7 +17,7 @@ $(NAME): $(OBJ_FILES) $(LIBFT)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -I $(INC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
 	make bonus -C $(LIBFT_DIR)
