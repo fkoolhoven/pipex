@@ -38,7 +38,7 @@ should recreate the behaviour of:
 You can add more commands if you'd like.
 My pipex also supports heredoc. Use as follows:
 ```c
-./pipex here_doc [LIMITER] command1 command2 [outfile.txt]
+./pipex here_doc [DELIMITER] command1 command2 [outfile.txt]
 ```
 For example:
 ```c
