@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   files.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:32:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/03 22:57:37 by felicia          ###   ########.fr       */
+/*   Updated: 2024/06/01 18:16:00 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int	manage_inputfile(t_var var, char **argv)
 	return (inputfile_error);
 }
 
-void	input_to_heredoc(int fd_heredoc, char *limiter)
+void	input_to_heredoc(int fd_heredoc, char *delimiter)
 {
 	char	*next_line;
 
 	ft_putstr_fd("pipe heredoc> ", STDOUT_FILENO);
 	next_line = get_next_line(STDIN_FILENO);
-	while (ft_strncmp(next_line, limiter, ft_strlen(limiter)) != 0)
+	while (ft_strncmp(next_line, delimiter, ft_strlen(delimiter)) != 0)
 	{
 		ft_putstr_fd("pipe heredoc> ", STDOUT_FILENO);
 		ft_putstr_fd(next_line, fd_heredoc);
@@ -65,12 +65,12 @@ void	input_to_heredoc(int fd_heredoc, char *limiter)
 		next_line = get_next_line(STDIN_FILENO);
 	}
 	free(next_line);
-	free(limiter);
+	free(delimiter);
 }
 
 int	manage_heredoc(t_var var, char **argv)
 {
-	char	*limiter;
+	char	*delimiter;
 	int		fd_heredoc;
 
 	if (var.argc < 6)
@@ -81,8 +81,8 @@ int	manage_heredoc(t_var var, char **argv)
 	fd_heredoc = open("heredoc", O_CREAT | O_RDWR | O_EXCL, 0644);
 	if (fd_heredoc < 0)
 		handle_errors(EXIT_FAILURE);
-	limiter = ft_strjoin(argv[2], "\n");
-	input_to_heredoc(fd_heredoc, limiter);
+	delimiter = ft_strjoin(argv[2], "\n");
+	input_to_heredoc(fd_heredoc, delimiter);
 	close(fd_heredoc);
 	fd_heredoc = open("heredoc", O_RDONLY);
 	if (dup2(fd_heredoc, STDIN_FILENO) < 0)
